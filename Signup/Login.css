@@ -1,0 +1,187 @@
+ /* 이 속성으로 유효성 검사의 요구사항이 부적합할 때만 시각적 피드백을 제공할 수 있다. */
+.hide {
+    display: none;
+}
+
+
+/* 디자인 레이아웃 잡기 */
+/* 0. 기본 스타일링을 제거 */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 16px;
+}
+
+/* 1. 배경 영역 */
+body {
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 2. 회원가입 틀 영역 */
+main {
+    border: 3px outset black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23rem;
+    height: auto;
+    padding: 30px;
+}
+
+/* 3. 로고 영역 */
+.logo {
+    border: none;
+    width: 170px;
+    margin: 12px auto 30px;
+}
+
+/* 4. 입력칸 틀 영역 */
+fieldset {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px 12px;
+}
+
+/* 5. 입력칸 영역 */
+input {
+    border: 1px solid purple;
+    width: 15rem;
+}
+
+/* 6. 회원가입 영역 */
+button {
+    border: 1px solid purple;
+    cursor: pointer;
+    width: 16.3rem;
+    height: 3rem;
+}
+
+
+/* 스타일 적용하기 */
+/* 1. 배경 스타일 적용하기 */
+body {
+    background-image: url('https://pixabay.com/get/gba0eabe0c8dc9eec86d50981c9f8d6fb975ddcd5ccbcb5c071569a33f0226c89257ae141b0e7de63a3ca95778952f222.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 2. 회원가입 틀 영역 스타일 적용하기 */
+/* hover 하기 전 */
+main {
+    background: linear-gradient(124.47deg,
+                rgba(255, 255, 255, 0.0),
+                rgba(255, 255, 255, 0.0),
+                rgba(255, 255, 255, 0.0)); /* 배경색이 투명하게 보이게 한다 */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+}
+/* hover 했을 때 (커서가 요소 위에 올라가 있을 때 */
+main:hover {
+    background: linear-gradient(124.47deg,
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0.0),
+                rgba(255, 255, 255, 0.2));
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+/* 3. 로고 영역 스타일 적용하기 */
+
+/* 4. 입력칸 틀 영역 */
+fieldset {
+    border-radius: 50px;
+}
+/* hover 하기 전 */
+fieldset:not(:last-of-type) {
+    background: linear-gradient(124124.47deg,
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0.0),
+                rgba(255, 255, 255, 0.2));
+    box-shadow: 0 4px 30px rgba(0,0, 0, 0.2);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(0px);  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* hover 했을 떄 (아이디 영역에 커서를 올림) */
+fieldset:not(:last-of-type):hover{
+    background: linear-gradient(124124.47deg,
+                rgba(255, 255, 255, 0.5),
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.5));
+    box-shadow: 0 4px 30px rgba(0,0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 5. 입력칸 영역 */
+input {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1.0);
+}
+/* 도움말에 있는 글자색을 적용하기 위해 ::placeholder를 활용한다. */
+input::placeholder {
+    color: rgba(100, 100, 100, 1.0);
+}
+/* input 박스를 클릭했을 때 보이는 외곽선을 지우기 위해 :focus를 활용해 outline을 none으로 설정한다. */
+input:focus {
+    outline: none;
+}
+
+/* 6. 회원가입 버튼 영역 */
+/* border: none; 로 .signup 영역의 외곽선을 안 보이게 설정하였다. */
+.signup {
+    border: none;
+}
+/* 회원가입 버튼에도 스타일을 적용한다. (hover 전) */
+button {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: black;
+    font-size: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(124.47deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.0),
+            rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(5px);
+}
+/*회원가입 버튼에도 스타일을 적용한다. (hover 후) */
+button:hover {
+    background: linear-gradient(124.47deg,
+            rgba(61, 151, 215, 0.8),
+            rgba(61, 151, 215, 0.6),
+            rgba(61, 151, 215, 0.8));
+    top: 1px;
+    margin-top: 1px;
+}
+/* active 상태일 때 (버튼을 눌렀을 때) */
+button:active {
+    position: relative;
+    top: 5px;
+    margin-top: 5px;
+}
+
+
+/* 7. 실패 메시지 영역 */
+/* 유효성 검사에 적합하지 않는 경우 발생하는 실패 메시지에도 스타일을 적용한다. */
+main > div {
+    color: black;
+    font-size: 14px;
+    padding: 0px 30px 0px 30px;
+} 
